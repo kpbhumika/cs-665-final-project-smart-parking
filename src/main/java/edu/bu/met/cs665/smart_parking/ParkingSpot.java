@@ -11,11 +11,10 @@ public class ParkingSpot {
     private String location;
     private boolean isAvailable;
 
-    // Constructor that uses the builder to initialize the object
-    public ParkingSpot(ParkingSpotBuilder builder) {
-        this.id = builder.getId();
-        this.location = builder.getLocation();
-        this.isAvailable = builder.isAvailable();
+    public ParkingSpot(String id, String location, boolean isAvailable) {
+        this.id = id;
+        this.location = location;
+        this.isAvailable = isAvailable;
     }
 
     public String getId() {

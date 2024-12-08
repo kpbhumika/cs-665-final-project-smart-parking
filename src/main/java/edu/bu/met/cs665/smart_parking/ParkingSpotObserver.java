@@ -6,9 +6,7 @@
 package edu.bu.met.cs665.smart_parking;
 
 
-import java.util.List;
-
 public interface ParkingSpotObserver {
-    void update(List<ParkingSpot> availableSpots);
+    void update(String message);
 }
 

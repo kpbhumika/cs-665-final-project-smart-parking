@@ -10,48 +10,27 @@ public class ParkingSpotBuilder {
     private String location;
     private boolean isAvailable;
 
-    // Constructor that takes parameters for id, location, and availability
-    public ParkingSpotBuilder(String id, String location, boolean isAvailable) {
+
+    // Set the Spot ID
+    public ParkingSpotBuilder setId(String id) {
         this.id = id;
+        return this;
+    }
+
+    // Set the Spot Location
+    public ParkingSpotBuilder setLocation(String location) {
         this.location = location;
-        this.isAvailable = true;
+        return this;
     }
 
-    // Getters for fields
-    public String getId() {
-        return id;
+    // Set the Spot Availability
+    public ParkingSpotBuilder setAvailability(boolean isAvailable) {
+        this.isAvailable = isAvailable;
+        return this;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public boolean isAvailable() {
-        return isAvailable;
-    }
-
-    // Setters if you want to modify any attributes later (optional)
-//    public ParkingSpotBuilder setId(String id) {
-//        this.id = id;
-//        return this;
-//    }
-//
-//    public ParkingSpotBuilder setLocation(String location) {
-//        this.location = location;
-//        return this;
-//    }
-//
-//    public ParkingSpotBuilder setAvailability(boolean isAvailable) {
-//        this.isAvailable = isAvailable;
-//        return this;
-//    }
-
-    // Build method to create the final ParkingSpot object
+    // Method to build the ParkingSpot object
     public ParkingSpot build() {
-        return new ParkingSpot(this);
+        return new ParkingSpot(this.id, this.location, this.isAvailable);
     }
 }
-
-
-
-
