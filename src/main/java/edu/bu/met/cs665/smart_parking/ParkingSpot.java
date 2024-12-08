@@ -21,10 +21,6 @@ public class ParkingSpot {
         return id;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
     public boolean isAvailable() {
         return isAvailable;
     }

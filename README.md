@@ -1,19 +1,23 @@
 
-| CS-665       | Software Design & Patterns |
-|--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| CS-665       | Software Design & Patterns    |
+|--------------|-------------------------------|
+| Name         | BHUMIKA KUSUGOLLI PARAMESWARA |
+| Date         | 12/06/2024                    |
+| Course       | Fall                          |
+| Assignment # | Final Project                 |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+## Overview
+
+The objective of this assignment is to design and implement a parking spot management system that allows users to view, book, and release parking spots. The system is intended to demonstrate the use of key object-oriented design principles, specifically the **Observer** and **Builder** patterns. The **Observer** pattern ensures that users are notified whenever there is a change in parking spot availability, while the **Builder** pattern makes it easier to create and configure parking spots with various attributes.
+
+Through this assignment, the goal is to build a flexible, maintainable, and user-friendly system. The design should allow for easy extension, such as adding new types of parking spots or users, and should ensure that the code is clear, understandable, and free from redundancy. Additionally, the system should effectively manage the relationships between users and parking spots, making it easy to book and release spots while keeping all users updated with real-time notifications.
+
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/kpbhumika/cs-665-final-project-smart-parking.git
 
-# Implementation Description 
-
+# Implementation Description
 
 For each assignment, please answer the following:
 
@@ -26,9 +30,23 @@ easy for others to read and maintain.
 chosen.
 
 
+## Flexibility
+The implementation is highly flexible due to the use of the **Builder** pattern for creating parking spots, which allows easy modification of spot attributes without altering the underlying code. The **Observer** pattern ensures that new observers (users) can be added or removed without affecting the core functionality of the parking spot manager.
+
+## Simplicity and Understandability
+The code is designed to be simple and modular. Each class has a clear responsibility (e.g., `ParkingSpotManager` for managing spots, `User` for observing updates). The use of design patterns like **Observer** and **Builder** makes the code intuitive and easy to maintain, with minimal complexity in each class.
+
+## Avoiding Duplicated Code
+Duplicated code is avoided by centralizing functionality in the `ParkingSpotManager` (handling spot management and notifications) and the `ParkingSpotBuilder` (creating spots with flexible attributes). This prevents repetition and reduces errors, ensuring that changes in spot creation or notification logic only need to be made in one place.
+
+## Design Patterns Used
+- **Observer Pattern**: Chosen to manage dynamic user subscriptions and notifications. This allows users to be notified automatically when a parking spot’s status changes, promoting loose coupling between the `ParkingSpotManager` and `User` classes.
+- **Builder Pattern**: Used to create `ParkingSpot` objects step by step, allowing for flexible and readable object construction, especially when dealing with multiple attributes or optional values.
+
+
 # Maven Commands
 
-We'll use Apache Maven to compile and run this project. You'll need to install Apache Maven (https://maven.apache.org/) on your system. 
+We'll use Apache Maven to compile and run this project. You'll need to install Apache Maven (https://maven.apache.org/) on your system.
 
 Apache Maven is a build automation tool and a project management tool for Java-based projects. Maven provides a standardized way to build, package, and deploy Java applications.
 
@@ -41,7 +59,7 @@ Maven also integrates with other development tools, such as IDEs and continuous 
 Maven provides a large number of plugins for various tasks, such as compiling code, running tests, generating reports, and creating JAR files. This makes it a versatile tool that can be used for many different types of Java projects.
 
 ## Compile
-Type on the command line: 
+Type on the command line:
 
 ```bash
 mvn clean compile
@@ -66,7 +84,7 @@ mvn clean test
 ```
 
 
-## Spotbugs 
+## Spotbugs
 
 SpotBugs is a static code analysis tool for Java that detects potential bugs in your code. It is an open-source tool that can be used as a standalone application or integrated into development tools such as Eclipse, IntelliJ, and Gradle.
 
@@ -79,16 +97,16 @@ Using SpotBugs can help to improve the quality and reliability of your code by c
 Use the following command:
 
 ```bash
-mvn spotbugs:gui 
+mvn spotbugs:gui
 ```
 
-For more info see 
+For more info see
 https://spotbugs.readthedocs.io/en/latest/maven.html
 
 SpotBugs https://spotbugs.github.io/ is the spiritual successor of FindBugs.
 
 
-## Checkstyle 
+## Checkstyle
 
 Checkstyle is a development tool for checking Java source code against a set of coding standards. It is an open-source tool that can be integrated into various integrated development environments (IDEs), such as Eclipse and IntelliJ, as well as build tools like Maven and Gradle.
 
@@ -98,7 +116,7 @@ By using Checkstyle, developers can ensure that their code adheres to a consiste
 
 Checkstyle is highly configurable and can be customized to fit the needs of your team or organization. It supports a wide range of coding standards and can be integrated with other tools, such as code coverage and automated testing tools, to create a comprehensive and automated software development process.
 
-The following command will generate a report in HTML format that you can open in a web browser. 
+The following command will generate a report in HTML format that you can open in a web browser.
 
 ```bash
 mvn checkstyle:checkstyle
