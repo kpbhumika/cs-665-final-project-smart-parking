@@ -10,7 +10,6 @@ public class ParkingSpotBuilder {
     private String location;
     private boolean isAvailable;
 
-
     // Set the Spot ID
     public ParkingSpotBuilder setId(String id) {
         this.id = id;
@@ -31,6 +30,19 @@ public class ParkingSpotBuilder {
 
     // Method to build the ParkingSpot object
     public ParkingSpot build() {
-        return new ParkingSpot(this.id, this.location, this.isAvailable);
+        return new ParkingSpot(this);
+    }
+
+    // Getters for each property, used by ParkingSpot constructor
+    public String getId() {
+        return id;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
     }
 }

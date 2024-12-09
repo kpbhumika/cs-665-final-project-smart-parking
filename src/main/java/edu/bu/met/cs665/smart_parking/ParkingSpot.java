@@ -5,16 +5,16 @@
 
 package edu.bu.met.cs665.smart_parking;
 
-
 public class ParkingSpot {
     private String id;
     private String location;
     private boolean isAvailable;
 
-    public ParkingSpot(String id, String location, boolean isAvailable) {
-        this.id = id;
-        this.location = location;
-        this.isAvailable = isAvailable;
+    // Constructor that takes a builder object
+    public ParkingSpot(ParkingSpotBuilder builder) {
+        this.id = builder.getId();
+        this.location = builder.getLocation();
+        this.isAvailable = builder.isAvailable();
     }
 
     public String getId() {
@@ -34,6 +34,3 @@ public class ParkingSpot {
         return "Spot ID: " + id + ", Location: " + location + ", Available: " + isAvailable;
     }
 }
-
-
-
